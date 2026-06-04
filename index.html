@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>MAX Bridge Test</title>
+    <script src="https://st.max.ru/js/max-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="header">
+    <h1>MAX Bridge Test</h1>
+    <p class="subtitle">Мини-приложение для тестирования API</p>
+</div>
+
+<div class="card" id="init-card">
+    <h2>Инициализация</h2>
+    <div id="init-info">
+        <div class="info-row"><span class="info-label">Платформа</span><span class="info-value" id="platform">—</span></div>
+        <div class="info-row"><span class="info-label">Версия MAX</span><span class="info-value" id="version">—</span></div>
+        <div class="info-row"><span class="info-label">initData (обрезано)</span><span class="info-value" id="initdata">—</span></div>
+        <div class="info-row"><span class="info-label">Пользователь</span><span class="info-value" id="user-info">—</span></div>
+        <div class="info-row"><span class="info-label">Чат</span><span class="info-value" id="chat-info">—</span></div>
+        <div class="info-row"><span class="info-label">Start Param</span><span class="info-value" id="start-param">—</span></div>
+    </div>
+    <div id="no-webapp-warning" class="warning" style="display: none;">
+        WebApp не обнаружен. Запустите приложение внутри MAX.
+    </div>
+</div>
+
+<div class="card">
+    <h2>Экран и яркость</h2>
+    <div class="btn-group">
+        <button id="btn-brightness-on">Макс. яркость</button>
+        <button id="btn-brightness-off" class="secondary">Восстановить яркость</button>
+    </div>
+    <div class="btn-group">
+        <button id="btn-screenshot-on">Скриншоты ВКЛ</button>
+        <button id="btn-screenshot-off" class="danger">Скриншоты ВЫКЛ</button>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Телефон и закрытие</h2>
+    <div class="btn-group">
+        <button id="btn-request-phone">Запросить номер</button>
+        <button id="btn-enable-close-confirm">Вкл. подтверждение закрытия</button>
+        <button id="btn-disable-close-confirm" class="secondary">Выкл. подтверждение закрытия</button>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Ссылки и файлы</h2>
+    <div class="btn-group">
+        <button id="btn-open-link">Открыть внешнюю ссылку</button>
+        <button id="btn-open-max-link">MAX диплинк</button>
+        <button id="btn-download">Скачать файл</button>
+    </div>
+    <div class="btn-group">
+        <button id="btn-share-content">Поделиться (внешне)</button>
+        <button id="btn-share-max-content">Поделиться в MAX</button>
+    </div>
+</div>
+
+<div class="card">
+    <h2>QR-сканер</h2>
+    <div class="btn-group">
+        <button id="btn-qr-file">Сканировать (файл/камера)</button>
+        <button id="btn-qr-camera">Сканировать (только камера)</button>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Кнопка «Назад»</h2>
+    <div class="btn-group">
+        <button id="btn-back-show">Показать</button>
+        <button id="btn-back-hide" class="secondary">Скрыть</button>
+    </div>
+    <p class="hint">Обработчик нажатия логируется в консоль и статус</p>
+</div>
+
+<div class="card">
+    <h2>Device Storage</h2>
+    <div class="input-row">
+        <input type="text" id="ds-key" placeholder="Ключ">
+        <input type="text" id="ds-value" placeholder="Значение">
+    </div>
+    <div class="btn-group">
+        <button id="btn-ds-set">Сохранить</button>
+        <button id="btn-ds-get">Получить</button>
+        <button id="btn-ds-remove">Удалить</button>
+        <button id="btn-ds-clear" class="danger">Очистить всё</button>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Secure Storage</h2>
+    <div class="input-row">
+        <input type="text" id="ss-key" placeholder="Ключ">
+        <input type="text" id="ss-value" placeholder="Значение">
+    </div>
+    <div class="btn-group">
+        <button id="btn-ss-set">Сохранить</button>
+        <button id="btn-ss-get">Получить</button>
+        <button id="btn-ss-remove">Удалить</button>
+        <button id="btn-ss-clear" class="danger">Очистить всё</button>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Лог операций</h2>
+    <div class="log-area" id="log"></div>
+    <button id="btn-clear-log" class="secondary" style="margin-top: 8px;">Очистить лог</button>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
