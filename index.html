@@ -13,14 +13,14 @@
         var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
         if (isAndroid) {
-            var intentUrl = "intent://app" + 
+            var intentUrl = "intent://nps?premise_id=" + premiseId + 
                             "#Intent;scheme=strana;package=" + packageName + 
                             ";S.browser_fallback_url=https://play.google.com/store/apps/details?id=" + packageName + ";end";
             
             window.location.href = intentUrl;
         } 
         else if (isIOS) {
-            window.location.href = "strana://app";
+            window.location.href = "strana://nps?premise_id=" + premiseId;
 
             var delay = 2000;
             var start = Date.now();
@@ -33,7 +33,7 @@
             }, delay);
         } 
         else {
-            window.location.href = "strana://app";
+            window.location.href = "strana://nps?premise_id=" + premiseId;
         }
       })();
     </script>
