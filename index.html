@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
       (function() {
+        var premiseId = "733713cf-29ba-42b5-bda3-50a819847e46";
         var packageName = "com.mintrocket.strana_development";
         var appStoreUrl = "https://apps.apple.com/ru/app/страна/id1534717460";
         
@@ -12,13 +13,14 @@
         var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
         if (isAndroid) {
-            var intentUrl = "intent://main#Intent;scheme=strana;package=" + packageName + 
+            var intentUrl = "intent://app" + 
+                            "#Intent;scheme=strana;package=" + packageName + 
                             ";S.browser_fallback_url=https://play.google.com/store/apps/details?id=" + packageName + ";end";
             
             window.location.href = intentUrl;
         } 
         else if (isIOS) {
-            window.location.href = "strana://main";
+            window.location.href = "strana://app";
 
             var delay = 2000;
             var start = Date.now();
@@ -31,7 +33,7 @@
             }, delay);
         } 
         else {
-            window.location.href = "strana://main";
+            window.location.href = "strana://app";
         }
       })();
     </script>
